@@ -17,6 +17,7 @@ const data = {
             companyName: "Cisco",
             yearRange: "2018-2020",
             title: "Full Stack Engineer",
+            tech: "FastAPI, Python, React, Redux, Saga, Kafka, Celery, Redis, Elasticsearch",
             desc: "Built a data aggregation platform that connects multiple internal data sources to help expedite the development process. The project centralizes and simplifies data streams to create an enjoyable user experience. One popular feature of the project that I helped take lead in was gamifying component health by taking into account bugs over time, line coverage, code coverage, and sanity pass rates and associating a health score for each component. This specific portion of the project averaged 100 DAU’s that consisted of managers, PM’s and tech leads in my BU."
         },
     ],
