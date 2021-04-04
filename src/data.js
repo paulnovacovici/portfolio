@@ -11,7 +11,8 @@ const data = {
             companyName: "Facebook",
             yearRange: "2020-present",
             title: "Enterprise Software Engineer",
-            desc: "TBD"
+            tech: "Hack, React, Python, SQL, GraphQL, Relay",
+            desc: "Working on building robust full stack enterprise solutions focussing on the Accounting space."
         },
         {
             companyName: "Cisco",
