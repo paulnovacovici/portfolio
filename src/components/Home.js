@@ -21,19 +21,23 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     boxSizing: 'border-box'
   },
-  sectionTitle: {
-    textDecoration: "underline"
-  },
   rightPanelGrid: {
     // Subtract appbar height and fill page
     maxHeight: "calc(100vh - 48px)",
-    overflow: "scroll"
+    [theme.breakpoints.up('sm')]: {
+      overflow: "unset"
+    },
+    [theme.breakpoints.up('md')]: {
+      overflow: "scroll"
+    },
   },
   leftPanelGrid: {
     backgroundColor: '#03a9f4',
     color: "white",
     // Subtract appbar height and fill page
-    height: "calc(100vh - 48px)"
+    height: "calc(100vh - 48px)",
+    paddingLeft: '12px',
+    paddingRight: '12px'
   },
   fullName: {
     fontWeight: 500
@@ -67,7 +71,7 @@ function MediumSVG() {
 
 function LinkedCareerIcons() {
   return (
-    <Box mt={1} display="flex" justifyContent="center" style={{"gap": "8px"}}>
+    <Box mt={2} display="flex" justifyContent="center" style={{"gap": "12px"}}>
       <Link href="https://medium.com/@paulnovacovici" target="_blank" color="inherit">
         <MediumSVG/>
       </Link>
@@ -107,7 +111,7 @@ function JobExperienceCard({title, company, yearsWorked, description, technologi
   const classes = useStyles();
 
   return (
-    <Box xs={12} className={classes.experiencePanel} mt={2}>
+    <Box sm={12} className={classes.experiencePanel} mt={2}>
       <Paper elevation={3} >
         <Box p={2}>
           <Box display="flex" >
@@ -127,7 +131,7 @@ function JobExperienceCard({title, company, yearsWorked, description, technologi
   )
 }
 
-function ProjectCard({title, link, description}) {
+function ProjectCard({title, link, description, technologies}) {
   const classes = useStyles();
 
   return (
@@ -137,6 +141,7 @@ function ProjectCard({title, link, description}) {
           <Box p={2}>
             <Typography variant="h5">{title}</Typography>
             <Typography variant="body2">{description}</Typography>
+            {technologies ? <Typography component={Box} mt={1} variant="caption">{technologies}</Typography> : <React.Fragment/>}
           </Box>
         </Paper>
       </Link>
@@ -167,7 +172,7 @@ function ProjectSection() {
         <Typography variant="h4" className={classes.sectionTitle}>Projects</Typography>
         {
           data.projects.map((project) => (
-            <ProjectCard title={project.projectName} description={project.desc} link={project.projectLink}/>
+            <ProjectCard title={project.projectName} technologies={project.tech} description={project.desc} link={project.projectLink}/>
           ))
         }
       </Box>
@@ -192,10 +197,10 @@ export function NestedGrid() {
   return (
     <Container maxWidth="xl" className={classes.root}>
       <Grid container style={{width: "100%"}}>
-        <Grid container item justify="center" xs={12} sm={4} className={classes.leftPanelGrid}>
+        <Grid container item justify="center" sm={12} md={4} className={classes.leftPanelGrid}>
           <LeftPanel />
         </Grid>
-        <Grid container item xs={12} sm={8} className={classes.rightPanelGrid}>
+        <Grid container item sm={12} md={8} className={classes.rightPanelGrid}>
           <RightPanel />
         </Grid>
       </Grid>

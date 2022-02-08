@@ -24,15 +24,23 @@ const data = {
     ],
     projects: [
         {
+            projectName: "Nova",
+            projectLink: "https://github.com/paulnovacovici/Nova",
+            tech: "Swift 5, Firebase",
+            desc: "Worked on a native iOS project written entirely in Swift 5. This was an attempt at starting up a company where I worked with a client that was looking to undercut a merchandising competitor. The key features that were requested was the ability to track employees on their routes, allow employees to upload pictures of merchandise, feature for employees to clock in for the work day, and a form to keep track of sales."
+        },
+        {
             projectName: "The Lyricist",
             projectLink: "https://thelyricist.novacovici.dev",
+            tech: "React",
             desc: "Inspired by a simlar project to practice typing while reading books I decided to try to replciate the logic with music lyrics. Project was built using React Hooks with focus on React fundamentals and UX/UI."
         },
         {
             projectName: "Genetic Algorithm Impossible Game",
             projectLink: "https://github.com/paulnovacovici/Impossible-Game",
+            tech: "Unity, C#",
             desc: "Driven by interest in machine learning, self-taught game development using machine learning concepts. Recreated the popular game the Impossible Game using Unity and C#. Used 15 input nodes to identify obstacles and one output node that decided if the AI should jump or not. Every generation the top 10% of performers would generate an offspring for the next iteration until completion"
-        }
+        },
     ]
 }
 
