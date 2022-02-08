@@ -131,17 +131,24 @@ function JobExperienceCard({title, company, yearsWorked, description, technologi
   )
 }
 
-function ProjectCard({title, link, description, technologies}) {
+function ProjectCard({title, link, description, technologies, demo_src}) {
   const classes = useStyles();
 
   return (
     <Box xs={12} className={classes.experiencePanel} mt={2}>
       <Link href={link} target="_blank">
         <Paper elevation={3}>
-          <Box p={2}>
-            <Typography variant="h5">{title}</Typography>
-            <Typography variant="body2">{description}</Typography>
-            {technologies ? <Typography component={Box} mt={1} variant="caption">{technologies}</Typography> : <React.Fragment/>}
+          {/* TODO: Add media query that does reverse flex if it's not a mobile phone, and block otherwise.
+           This will then stack the gif on top of the project desc if on mobile.*/}
+          <Box display="flex" alignItems="center" p={2}>
+            <Box>
+              <Typography variant="h5">{title}</Typography>
+              <Typography variant="body2">{description}</Typography>
+              {technologies ? <Typography component={Box} mt={1} variant="caption">{technologies}</Typography> : <React.Fragment/>}
+            </Box>
+            {demo_src && <Box marginLeft={1}>
+              <img src={demo_src} alt="funny GIF" height="200px"/>
+            </Box> }
           </Box>
         </Paper>
       </Link>
@@ -172,7 +179,7 @@ function ProjectSection() {
         <Typography variant="h4" className={classes.sectionTitle}>Projects</Typography>
         {
           data.projects.map((project) => (
-            <ProjectCard title={project.projectName} technologies={project.tech} description={project.desc} link={project.projectLink}/>
+            <ProjectCard title={project.projectName} demo_src={project.demo} technologies={project.tech} description={project.desc} link={project.projectLink}/>
           ))
         }
       </Box>
