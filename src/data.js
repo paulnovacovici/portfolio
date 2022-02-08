@@ -32,6 +32,7 @@ const data = {
         },
         {
             projectName: "The Lyricist",
+            demo: "https://media.giphy.com/media/eNghivSOshuJswfjiB/giphy.gif",
             projectLink: "https://thelyricist.novacovici.dev",
             tech: "React",
             desc: "Inspired by a simlar project to practice typing while reading books I decided to try to replciate the logic with music lyrics. Project was built using React Hooks with focus on React fundamentals and UX/UI."
