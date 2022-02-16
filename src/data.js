@@ -28,7 +28,7 @@ const data = {
             demo: "https://media.giphy.com/media/19QQAMMUZRc8yarfE7/giphy.gif",
             projectLink: "https://github.com/paulnovacovici/Nova",
             tech: "Swift 5, Firebase",
-            desc: "Worked on a native iOS project written entirely in Swift 5. This was a start up a company where I worked with a client that was looking to undercut a merchandising competitor. The key features that were requested was the ability to track employees on their routes, allow employees to upload pictures of merchandise, feature for employees to clock in for the work day, and a form to keep track of sales."
+            desc: "Worked on a native iOS project written entirely in Swift 5. This was a personal start up company where I worked with a client that was looking to undercut a merchandising competitor. The key features that were requested was the ability to track employees on their routes, allow employees to upload pictures of merchandise, feature for employees to clock in for the work day, and a form to keep track of sales."
         },
         {
             projectName: "The Lyricist",

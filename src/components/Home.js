@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
       overflow: "unset"
     },
     [theme.breakpoints.up('md')]: {
-      overflow: "scroll"
+      overflowY: "scroll"
     },
   },
   leftPanelGrid: {
