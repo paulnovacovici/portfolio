@@ -8,11 +8,12 @@ const data = {
     avatarImg: `${process.env.PUBLIC_URL}/03-pnovacov-mauricio-palomar.jpg`,
     jobExperience: [
         {
-            companyName: "Facebook",
+            companyName: "Meta",
+            icon: "https://cdn-icons-png.flaticon.com/512/6033/6033716.png",
             yearRange: "2020-present",
             title: "Enterprise Software Engineer",
-            tech: "Hack, React, Python, SQL, GraphQL, Relay",
-            desc: "Working on building robust full stack enterprise solutions focussing on the Accounting space."
+            tech: "Hack, React, Python, SQL, GraphQL, Relay, Flux, Ent Framework",
+            desc: "Working on building full stack applications in the finance space. Some key projects I've worked on was building a scalable expense payment system for employees. From the time of writing this we've processed 100,000 payments, which amount to $67M. This project had a large impact at Meta due to the amount of savings we had for canceling our contract with Concur Pay. Another project I've worked on was creating a Travel Hub for employees. The project consisted of communicating with our travel service provider CWT, and creating a hook for them to push employee booking data to us. With that data available we were able to run data analytics on high variance trips by employees, and implemented a beautiful email user experience for users that booked flights."
         },
         {
             companyName: "Cisco",
@@ -23,6 +24,13 @@ const data = {
         },
     ],
     projects: [
+        {
+            projectName: "Global Entry Notif",
+            demo: "https://globalentrynotif.com/iphone.png",
+            projectLink: "https://globalentrynotif.com/",
+            tech: "Firebase, React, Tailwinds, Heroku, Flask, Stripe, Headless UI",
+            desc: "Founded my own company, a private notification service integrated with Discord. Many people struggle with getting interviews to complete their Global Entry application often times waiting almost a year. Paid users of this service will receive notifications whenever a new appointmnet slot in their region opens up."
+        },
         {
             projectName: "Nova",
             demo: "https://media.giphy.com/media/19QQAMMUZRc8yarfE7/giphy.gif",
