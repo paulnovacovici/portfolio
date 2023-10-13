@@ -10,7 +10,18 @@ const data = {
     {
       companyName: "Meta",
       icon: "https://cdn-icons-png.flaticon.com/512/6033/6033716.png",
-      yearRange: "2020-present",
+      yearRange: "2023-present",
+      title: "Senior Enterprise Software Engineer",
+      tech: "Hack, React, Python, SQL, GraphQL, Relay, Flux, Ent Framework, C++, Presto",
+      desc: `Owner of a Transactional Accounting system that creates ~300M accounting lines monthly across 100 DB shards. I've also built a rules
+      engine that allows business users to own their own bespoke accounting rules dynamically. Was a lead developer in creating
+      a contract management system that automated amortization schedules for ~$1B in contracts, and directly integrated with invoicing,
+      and our general ledger to automate the entire prepaid and accrual process.`,
+    },
+    {
+      companyName: "Meta",
+      icon: "https://cdn-icons-png.flaticon.com/512/6033/6033716.png",
+      yearRange: "2020-2022",
       title: "Enterprise Software Engineer",
       tech: "Hack, React, Python, SQL, GraphQL, Relay, Flux, Ent Framework",
       desc: "Working on building full stack applications in the finance space. Some key projects I've worked on was building a scalable expense payment system for employees. From the time of writing this we've processed 100,000 payments, which amount to $67M. This project had a large impact at Meta due to the amount of savings we had for canceling our contract with Concur Pay. Another project I've worked on was creating a Travel Hub for employees. The project consisted of communicating with our travel service provider CWT, and creating a hook for them to push employee booking data to us. With that data available we were able to run data analytics on high variance trips by employees, and implemented a beautiful email user experience for users that booked flights.",
