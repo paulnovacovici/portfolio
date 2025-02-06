@@ -184,7 +184,14 @@ function JobExperienceCard({
   );
 }
 
-function ProjectCard({ title, link, description, technologies, demo_src }) {
+function ProjectCard({
+  title,
+  link,
+  description,
+  technologies,
+  demo_src,
+  icon,
+}) {
   const classes = useStyles();
   const theme = useTheme();
   const isSmall = useMediaQuery(theme.breakpoints.down("sm"));
@@ -200,7 +207,18 @@ function ProjectCard({ title, link, description, technologies, demo_src }) {
             flexDirection={`${isSmall ? "column" : "row"}`}
           >
             <Box flex="1">
-              <Typography variant="h5">{title}</Typography>
+              <Box display="flex" gridGap={8}>
+                {icon != null && (
+                  <Box>
+                    <img
+                      src={icon}
+                      alt="company icon"
+                      style={{ height: "2rem" }}
+                    />
+                  </Box>
+                )}
+                <Typography variant="h5">{title}</Typography>
+              </Box>
               <Typography variant="body2">{description}</Typography>
               {technologies ? (
                 <Typography component={Box} mt={1} variant="caption">
@@ -259,6 +277,7 @@ function ProjectSection() {
             technologies={project.tech}
             description={project.desc}
             link={project.projectLink}
+            icon={project.icon}
           />
         ))}
       </Box>

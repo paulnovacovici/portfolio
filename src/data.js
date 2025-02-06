@@ -36,6 +36,21 @@ const data = {
   ],
   projects: [
     {
+      projectName: "Recallify",
+      icon: `${process.env.PUBLIC_URL}/icon.png`,
+      projectLink: "https://recallify.app/",
+      tech: "React, Tailwinds, Supabase, React Native, Swift",
+      desc: "Centralized bookmarking application that users can easily bookmark anything from many surfaces chrome extension, web application, and mobile. The key differentiator of this project is the ability to search through your bookmarks with a natural language search. This project was built with a focus on UX/UI and performance. Users do not need to categorize book marks all they need is to save book mark with whatever semantic context they want to remember it by, and it will be embeded into a hyper dimensional space for easy discovery. There is also a automated context builder using LLM's to summarize the bookmark.",
+    },
+    {
+      projectName: "Consul",
+      demo: "https://cdn.loom.com/sessions/thumbnails/3d005f4d38b84727b3d6407a05bc80b9-with-play.gif",
+      projectLink:
+        "https://www.loom.com/share/3d005f4d38b84727b3d6407a05bc80b9?sid=cb8cef19-c1d7-4994-9087-4d974cb63293",
+      tech: "AWS Lambda, Tailwinds, React, AWS Amplify, AWS Cognito, AWS DynamoDB, S3",
+      desc: "Started a company with others from Google, and Amazon to break into the GenAI space in adminstrative law. We were talking to Michigan, Illinois, and Texas to pilot the program. We also made it to the final round of YCombinator and were interviewed by Garry Tan for funding. They were very excited about the project and the potenial it had to disrupt the legal industry, but when asked if we'd all quite our jobs to work on this full time some founders were hesitant, and it was decided that we would not move forward with Ycombinator. The start up ultimately fell apart after Biden adminstration put a hold on all AI projects in the judicial space.",
+    },
+    {
       projectName: "Piano Vision",
       demo: "https://media.giphy.com/media/VD5Ed2pEZ9dVWzdc8q/giphy.gif",
       projectLink: "https://piano-vision-fingering.web.app/",
