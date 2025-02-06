@@ -19,7 +19,6 @@ const useStyles = makeStyles((theme) => ({
     padding: "0px",
   },
   experiencePanel: {
-    width: "100%",
     boxSizing: "border-box",
   },
   rightPanelGrid: {
@@ -220,17 +219,19 @@ function ProjectCard({
                 <Typography variant="h5">{title}</Typography>
               </Box>
               <Typography variant="body2">{description}</Typography>
-              {technologies ? (
+              {technologies != null && (
                 <Typography component={Box} mt={1} variant="caption">
                   {technologies}
                 </Typography>
-              ) : (
-                <React.Fragment />
               )}
             </Box>
             {demo_src && (
               <Box marginLeft={1}>
-                <img src={demo_src} alt="gif demo" height="200px" />
+                <img
+                  src={demo_src}
+                  alt="gif demo"
+                  style={{ width: "100%", height: "200px" }}
+                />
               </Box>
             )}
           </Box>

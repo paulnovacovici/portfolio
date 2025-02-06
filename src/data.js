@@ -40,7 +40,7 @@ const data = {
       icon: `${process.env.PUBLIC_URL}/icon.png`,
       projectLink: "https://recallify.app/",
       tech: "React, Tailwinds, Supabase, React Native, Swift",
-      desc: "Centralized bookmarking application that users can easily bookmark anything from many surfaces chrome extension, web application, and mobile. The key differentiator of this project is the ability to search through your bookmarks with a natural language search. This project was built with a focus on UX/UI and performance. Users do not need to categorize book marks all they need is to save book mark with whatever semantic context they want to remember it by, and it will be embeded into a hyper dimensional space for easy discovery. There is also a automated context builder using LLM's to summarize the bookmark.",
+      desc: "Centralized bookmarking application that users can easily bookmark anything from many surfaces: chrome extension, web application, and mobile. The key differentiator of this project is the ability to search through your bookmarks with a natural language search. This project was built with a focus on UX/UI and performance. Users do not need to categorize book marks all they need is to save book mark with whatever semantic context they want to remember it by, and it will be embeded into a hyper dimensional space for easy discovery. There is also a automated context builder using LLM's to summarize the bookmark.",
     },
     {
       projectName: "Consul",
