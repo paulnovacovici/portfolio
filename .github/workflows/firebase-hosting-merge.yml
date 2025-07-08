@@ -1,7 +1,4 @@
-# .github/workflows/firebase-hosting.yml
-# Deploy to Firebase Hosting when code is pushed to master
 name: Deploy to Firebase Hosting on merge
-
 on:
   push:
     branches: [master]
@@ -9,29 +6,29 @@ on:
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
-
     steps:
-      # 1️⃣ Check out your code
-      - uses: actions/checkout@v4
-
-      # 2️⃣ Ensure a compatible Node version is first in $PATH
-      - name: Use Node.js 20 (LTS)
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4 # checkout w/ Node-20 runtime
+      - uses: actions/setup-node@v4
         with:
-          node-version: "20"
-          cache: "npm" # optional – speeds up npm ci
+          node-version: 20 # any ≥20 or ≥22 satisfies CLI 14.x
+          check-latest: true
 
-      # 3️⃣ Install deps and build
-      - run: |
-          npm ci
-          npm run build
+      # make sure THIS copy of node/npm/npx is found first
+      - name: Pre-pend Node 20 to PATH
+        id: paths
+        run: |
+          echo "NODE20=$(dirname $(which node))" >> "$GITHUB_OUTPUT"
+          echo "${{ steps.paths.outputs.NODE20 }}" | cat - $GITHUB_PATH > tmp && mv tmp $GITHUB_PATH
 
-      # 4️⃣ Deploy to Firebase Hosting
+      - run: npm ci && npm run build
+
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_NOVACOVICI_PORTFOLIO }}
-          channelId: live # production
+          channelId: live # deploy to production
           projectId: novacovici-portfolio
+          # optional, but explicit never hurts
+          firebaseToolsVersion: 14.9.0
         env:
-          FIREBASE_CLI_PREVIEWS: hostingchannels # keep if you rely on preview channels
+          FIREBASE_CLI_PREVIEWS: hostingchannels
