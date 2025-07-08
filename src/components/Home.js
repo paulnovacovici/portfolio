@@ -5,6 +5,7 @@ import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import Container from "@material-ui/core/Container";
 import Avatar from "@material-ui/core/Avatar";
+import Chip from "@material-ui/core/Chip";
 import data from "../data";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
@@ -171,9 +172,11 @@ function JobExperienceCard({
           <Typography variant="subtitle1">{title}</Typography>
           <Typography variant="body2">{description}</Typography>
           {technologies ? (
-            <Typography component={Box} mt={1} variant="caption">
-              {technologies}
-            </Typography>
+            <Box mt={1} display="flex" flexWrap="wrap" style={{ gap: 4 }}>
+              {technologies.split(",").map((tech) => (
+                <Chip key={tech.trim()} label={tech.trim()} size="small" />
+              ))}
+            </Box>
           ) : (
             <React.Fragment />
           )}
@@ -220,9 +223,11 @@ function ProjectCard({
               </Box>
               <Typography variant="body2">{description}</Typography>
               {technologies != null && (
-                <Typography component={Box} mt={1} variant="caption">
-                  {technologies}
-                </Typography>
+                <Box mt={1} display="flex" flexWrap="wrap" style={{ gap: 4 }}>
+                  {technologies.split(",").map((tech) => (
+                    <Chip key={tech.trim()} label={tech.trim()} size="small" />
+                  ))}
+                </Box>
               )}
             </Box>
             {demo_src && (
