@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio of Paul Novacovici, a Senior Software Engineer specializing in scalable systems, GenAI, and product engineering."
+    />
+    <meta name="theme-color" content="#0f172a" />
+    <title>Paul Novacovici | Senior Software Engineer</title>
+
+    <!-- Fonts: Inter for UI, JetBrains Mono for code/data -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              mono: ["JetBrains Mono", "monospace"],
+            },
+            colors: {
+              primary: "#38bdf8", // Light blue/cyan accent
+              surface: "#1e293b",
+              background: "#0f172a",
+            },
+            animation: {
+              "fade-in-up": "fadeInUp 0.8s ease-out forwards",
+              "pulse-slow": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+            },
+            keyframes: {
+              fadeInUp: {
+                "0%": { opacity: "0", transform: "translateY(20px)" },
+                "100%": { opacity: "1", transform: "translateY(0)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+      /* Custom Utilities */
+      body {
+        background-color: #0f172a; /* Slate 950 */
+        color: #e2e8f0; /* Slate 200 */
+      }
+
+      .glass-nav {
+        background: rgba(15, 23, 42, 0.85);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      /* Card Gradients */
+      .card-gradient {
+        background: linear-gradient(
+          180deg,
+          rgba(30, 41, 59, 0.5) 0%,
+          rgba(15, 23, 42, 0.5) 100%
+        );
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Hide scrollbar for clean aesthetic but allow scroll */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      ::selection {
+        background-color: #38bdf8;
+        color: #0f172a;
+      }
+    </style>
+  </head>
+  <body class="antialiased selection:bg-sky-500 selection:text-white">
+    <!-- Navigation -->
+    <nav
+      class="fixed top-0 w-full z-50 glass-nav transition-all duration-300"
+      id="navbar"
+    >
+      <div
+        class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between"
+      >
+        <a
+          href="#"
+          class="text-sm font-bold tracking-tight hover:text-white transition-colors flex items-center gap-2"
+        >
+          <div class="w-2 h-2 bg-sky-500 rounded-full"></div>
+          novacovici.dev
+        </a>
+        <ul class="flex space-x-6 text-sm font-medium text-slate-400">
+          <li>
+            <a href="#experience" class="hover:text-white transition-colors"
+              >Experience</a
+            >
+          </li>
+          <li>
+            <a href="#projects" class="hover:text-white transition-colors"
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a href="#contact" class="hover:text-white transition-colors"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header
+      class="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden"
+    >
+      <!-- Ambient Background Gradient -->
+      <div
+        class="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] bg-sky-500/10 rounded-full blur-[100px] pointer-events-none animate-pulse-slow"
+      ></div>
+      <div
+        class="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-indigo-500/10 rounded-full blur-[100px] pointer-events-none"
+      ></div>
+
+      <div
+        class="max-w-6xl mx-auto px-6 w-full grid lg:grid-cols-2 gap-16 items-center"
+      >
+        <!-- Left: Intro -->
+        <div class="space-y-8 reveal active z-10">
+          <div
+            class="inline-flex items-center space-x-2 px-3 py-1 rounded-full border border-slate-700 bg-slate-800/50 text-xs font-mono text-sky-400 backdrop-blur-sm"
+          >
+            <span class="relative flex h-2 w-2">
+              <span
+                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"
+              ></span>
+              <span
+                class="relative inline-flex rounded-full h-2 w-2 bg-sky-500"
+              ></span>
+            </span>
+            <span>Senior Software Engineer</span>
+          </div>
+
+          <h1
+            class="text-5xl md:text-7xl font-semibold tracking-tight text-white leading-[1.1]"
+          >
+            Paul <br class="hidden md:block" />Novacovici
+          </h1>
+
+          <p class="text-xl text-slate-400 max-w-md leading-relaxed">
+            Building scalable financial infrastructure and GenAI systems at
+            <span class="text-white font-medium">Meta</span>. Focused on
+            high-performance backend architecture and intuitive product
+            experiences.
+          </p>
+
+          <div class="flex flex-wrap gap-4 pt-4">
+            <a
+              href="#projects"
+              class="px-6 py-3 rounded-lg bg-white text-slate-900 font-medium hover:bg-slate-200 transition-all flex items-center gap-2 group"
+            >
+              Selected Work
+              <i
+                data-lucide="arrow-down-right"
+                class="w-4 h-4 group-hover:translate-x-0.5 group-hover:translate-y-0.5 transition-transform"
+              ></i>
+            </a>
+            <a
+              href="mailto:paulnovacovici@gmail.com"
+              class="px-6 py-3 rounded-lg border border-slate-700 text-slate-300 hover:text-white hover:border-slate-500 transition-all flex items-center gap-2"
+            >
+              Get in touch
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Key Achievements Grid -->
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 gap-4 reveal delay-100 opacity-0"
+        >
+          <!-- Card 1: GenAI -->
+          <div
+            class="p-6 rounded-2xl card-gradient border border-slate-800 hover:border-sky-500/30 transition-colors group"
+          >
+            <div
+              class="w-10 h-10 rounded-lg bg-sky-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
+            >
+              <i data-lucide="sparkles" class="w-5 h-5 text-sky-400"></i>
+            </div>
+            <div class="text-lg font-bold text-white mb-1">GenAI & VLMs</div>
+            <div class="text-sm text-slate-400 leading-relaxed">
+              Architected services for document understanding & contract
+              extraction using Vision Language Models.
+            </div>
+          </div>
+
+          <!-- Card 2: Session Replay -->
+          <div
+            class="p-6 rounded-2xl card-gradient border border-slate-800 hover:border-indigo-500/30 transition-colors group mt-0 sm:mt-8"
+          >
+            <div
+              class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
+            >
+              <i data-lucide="play-circle" class="w-5 h-5 text-indigo-400"></i>
+            </div>
+            <div class="text-lg font-bold text-white mb-1">Session Replay</div>
+            <div class="text-sm text-slate-400 leading-relaxed">
+              Implemented replay infrastructure across
+              <strong>all</strong> internal Meta products using Blob Store &
+              MySQL.
+            </div>
+          </div>
+
+          <!-- Card 3: Scale -->
+          <div
+            class="p-6 rounded-2xl card-gradient border border-slate-800 hover:border-emerald-500/30 transition-colors group"
+          >
+            <div
+              class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
+            >
+              <i data-lucide="database" class="w-5 h-5 text-emerald-400"></i>
+            </div>
+            <div class="text-lg font-bold text-white mb-1">300M+ Lines</div>
+            <div class="text-sm text-slate-400 leading-relaxed">
+              Monthly accounting lines generated via bespoke transaction
+              engines.
+            </div>
+          </div>
+
+          <!-- Card 4: Experience -->
+          <div
+            class="p-6 rounded-2xl card-gradient border border-slate-800 hover:border-rose-500/30 transition-colors group mt-0 sm:mt-8"
+          >
+            <div
+              class="w-10 h-10 rounded-lg bg-rose-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
+            >
+              <i data-lucide="code-2" class="w-5 h-5 text-rose-400"></i>
+            </div>
+            <div class="text-lg font-bold text-white mb-1">7+ Years</div>
+            <div class="text-sm text-slate-400 leading-relaxed">
+              Full-stack engineering experience specializing in Fintech and Big
+              Data.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div
+        class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce text-slate-600"
+      >
+        <i data-lucide="chevron-down" class="w-6 h-6"></i>
+      </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6">
+      <!-- About / Tech Stack Summary -->
+      <section id="about" class="py-24 border-b border-slate-800/50 reveal">
+        <div class="grid md:grid-cols-12 gap-12">
+          <div class="md:col-span-4">
+            <h2 class="text-sm font-mono text-sky-500 mb-2">01 / ABOUT</h2>
+            <h3 class="text-2xl font-semibold text-white">
+              Engineer & Architect
+            </h3>
+          </div>
+          <div class="md:col-span-8 space-y-8">
+            <p class="text-slate-400 text-lg leading-relaxed">
+              I specialize in building complex, data-intensive applications that
+              don't compromise on user experience. Currently a
+              <span class="text-slate-200"
+                >Senior Software Engineer at Meta</span
+              >, I architect financial systems operating at massive scale. I
+              blend deep backend knowledge (distributed systems, GenAI
+              pipelines) with a passion for polished, reactive frontends.
+            </p>
+
+            <div class="space-y-4">
+              <h4
+                class="text-sm font-medium text-white uppercase tracking-wider"
+              >
+                Technologies
+              </h4>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="px-3 py-1 rounded bg-slate-800 text-slate-300 text-xs font-mono hover:text-white transition-colors"
+                  >React</span
+                >
+                <span
+                  class="px-3 py-1 rounded bg-slate-800 text-slate-300 text-xs font-mono hover:text-white transition-colors"
+                  >Python</span
+                >
+                <span
+                  class="px-3 py-1 rounded bg-slate-800 text-slate-300 text-xs font-mono hover:text-white transition-colors"
+                  >Hack/PHP</span
+                >
+                <span
+                  class="px-3 py-1 rounded bg-slate-800 text-slate-300 text-xs font-mono hover:text-white transition-colors"
+                  >GenAI/VLMs</span
+                >
+                <span
+                  class="px-3 py-1 rounded bg-slate-800 text-slate-300 text-xs font-mono hover:text-white transition-colors"
+                  >GraphQL</span
+                >
+                <span
+                  class="px-3 py-1 rounded bg-slate-800 text-slate-300 text-xs font-mono hover:text-white transition-colors"
+                  >SQL</span
+                >
+                <span
+                  class="px-3 py-1 rounded bg-slate-800 text-slate-300 text-xs font-mono hover:text-white transition-colors"
+                  >AWS</span
+                >
+                <span
+                  class="px-3 py-1 rounded bg-slate-800 text-slate-300 text-xs font-mono hover:text-white transition-colors"
+                  >Tailwind</span
+                >
+                <span
+                  class="px-3 py-1 rounded bg-slate-800 text-slate-300 text-xs font-mono hover:text-white transition-colors"
+                  >Relay</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience Section -->
+      <section
+        id="experience"
+        class="py-24 border-b border-slate-800/50 reveal"
+      >
+        <div class="grid md:grid-cols-12 gap-12">
+          <div class="md:col-span-4 sticky top-24 h-fit">
+            <h2 class="text-sm font-mono text-sky-500 mb-2">02 / EXPERIENCE</h2>
+            <h3 class="text-2xl font-semibold text-white">Career Timeline</h3>
+          </div>
+          <div class="md:col-span-8 space-y-12 relative">
+            <!-- Vertical line -->
+            <div
+              class="absolute left-[-24px] top-2 bottom-2 w-px bg-slate-800 hidden md:block"
+            ></div>
+
+            <!-- Job 1 -->
+            <div class="relative group">
+              <div
+                class="absolute left-[-29px] top-[6px] w-[11px] h-[11px] rounded-full bg-sky-500 border-2 border-slate-950 hidden md:block"
+              ></div>
+              <div
+                class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2"
+              >
+                <h4
+                  class="text-xl font-medium text-white group-hover:text-sky-400 transition-colors"
+                >
+                  Senior Software Engineer
+                </h4>
+                <span class="text-sm font-mono text-slate-500"
+                  >2023 — Present</span
+                >
+              </div>
+              <div class="text-lg text-slate-200 mb-3">Meta</div>
+              <div class="text-slate-400 leading-relaxed mb-4 space-y-4">
+                <p>
+                  Spearheading GenAI financial initiatives for Meta's prepaids
+                  and accruals. Created services around
+                  <strong>VLMs (Vision Language Models)</strong> for document
+                  understanding to automate service date extraction and contract
+                  details.
+                </p>
+                <p>
+                  Introduced <strong>Session Replay</strong> infrastructure for
+                  all Meta internal products, utilizing Meta's internal
+                  S3-equivalent blob store and MySQL databases to enhance
+                  debugging and user experience analysis at scale.
+                </p>
+                <p>
+                  Owner of a Transactional Accounting system creating ~300M
+                  accounting lines monthly. Built a dynamic rules engine that
+                  empowers business users to own bespoke accounting rules
+                  dynamically.
+                </p>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="text-xs text-slate-500 border border-slate-800 px-2 py-0.5 rounded"
+                  >GenAI</span
+                >
+                <span
+                  class="text-xs text-slate-500 border border-slate-800 px-2 py-0.5 rounded"
+                  >Hack</span
+                >
+                <span
+                  class="text-xs text-slate-500 border border-slate-800 px-2 py-0.5 rounded"
+                  >React</span
+                >
+                <span
+                  class="text-xs text-slate-500 border border-slate-800 px-2 py-0.5 rounded"
+                  >Python</span
+                >
+                <span
+                  class="text-xs text-slate-500 border border-slate-800 px-2 py-0.5 rounded"
+                  >GraphQL</span
+                >
+              </div>
+            </div>
+
+            <!-- Job 2 -->
+            <div class="relative group">
+              <div
+                class="absolute left-[-29px] top-[6px] w-[11px] h-[11px] rounded-full bg-slate-700 border-2 border-slate-950 hidden md:block group-hover:bg-sky-500 transition-colors"
+              ></div>
+              <div
+                class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2"
+              >
+                <h4
+                  class="text-xl font-medium text-white group-hover:text-sky-400 transition-colors"
+                >
+                  Software Engineer
+                </h4>
+                <span class="text-sm font-mono text-slate-500"
+                  >2020 — 2022</span
+                >
+              </div>
+              <div class="text-lg text-slate-200 mb-3">Meta</div>
+              <p class="text-slate-400 leading-relaxed mb-4">
+                Built full-stack finance applications including a scalable
+                expense payment system processing $67M, leading to significant
+                savings by canceling external vendor contracts. Developed an
+                employee Travel Hub integrating with CWT for booking analytics
+                and enhanced user experience.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="text-xs text-slate-500 border border-slate-800 px-2 py-0.5 rounded"
+                  >Relay</span
+                >
+                <span
+                  class="text-xs text-slate-500 border border-slate-800 px-2 py-0.5 rounded"
+                  >Ent Framework</span
+                >
+                <span
+                  class="text-xs text-slate-500 border border-slate-800 px-2 py-0.5 rounded"
+                  >Flux</span
+                >
+              </div>
+            </div>
+
+            <!-- Job 3 -->
+            <div class="relative group">
+              <div
+                class="absolute left-[-29px] top-[6px] w-[11px] h-[11px] rounded-full bg-slate-700 border-2 border-slate-950 hidden md:block group-hover:bg-sky-500 transition-colors"
+              ></div>
+              <div
+                class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2"
+              >
+                <h4
+                  class="text-xl font-medium text-white group-hover:text-sky-400 transition-colors"
+                >
+                  Full Stack Engineer
+                </h4>
+                <span class="text-sm font-mono text-slate-500"
+                  >2018 — 2020</span
+                >
+              </div>
+              <div class="text-lg text-slate-200 mb-3">Cisco</div>
+              <p class="text-slate-400 leading-relaxed mb-4">
+                Built a data aggregation platform connecting multiple internal
+                sources. Lead developer on gamifying component health (bugs,
+                coverage, sanity passes), driving engagement with 100 DAUs
+                across engineering leadership.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="text-xs text-slate-500 border border-slate-800 px-2 py-0.5 rounded"
+                  >FastAPI</span
+                >
+                <span
+                  class="text-xs text-slate-500 border border-slate-800 px-2 py-0.5 rounded"
+                  >React</span
+                >
+                <span
+                  class="text-xs text-slate-500 border border-slate-800 px-2 py-0.5 rounded"
+                  >Kafka</span
+                >
+                <span
+                  class="text-xs text-slate-500 border border-slate-800 px-2 py-0.5 rounded"
+                  >Redis</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="py-24 reveal">
+        <div
+          class="flex flex-col md:flex-row md:items-end justify-between mb-12"
+        >
+          <div>
+            <h2 class="text-sm font-mono text-sky-500 mb-2">03 / WORK</h2>
+            <h3 class="text-3xl font-semibold text-white">Selected Projects</h3>
+          </div>
+          <div class="mt-4 md:mt-0">
+            <a
+              href="https://github.com/paulnovacovici"
+              target="_blank"
+              class="text-sm text-slate-400 hover:text-white flex items-center gap-1 transition-colors"
+            >
+              View Github Profile
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <!-- Project 1: Recallify -->
+          <div
+            class="group relative bg-slate-900/50 border border-slate-800 hover:border-sky-500/50 rounded-xl p-6 transition-all hover:bg-slate-900"
+          >
+            <div class="flex justify-between items-start mb-4">
+              <div class="p-3 bg-indigo-500/10 rounded-lg text-indigo-400">
+                <i data-lucide="bookmark" class="w-6 h-6"></i>
+              </div>
+              <div class="flex gap-3">
+                <a
+                  href="https://recallify.app/"
+                  target="_blank"
+                  class="text-slate-400 hover:text-white transition-colors"
+                  aria-label="Visit Recallify"
+                >
+                  <i data-lucide="external-link" class="w-5 h-5"></i>
+                </a>
+              </div>
+            </div>
+            <h4
+              class="text-xl font-semibold text-white mb-2 group-hover:text-sky-400 transition-colors"
+            >
+              Recallify
+            </h4>
+            <p class="text-slate-400 text-sm mb-4 line-clamp-3">
+              Centralized bookmarking with natural language semantic search.
+              Uses LLMs to build context and embed content into a
+              hyper-dimensional space for easy discovery. Focus on
+              high-performance UX across web and mobile.
+            </p>
+            <div class="flex flex-wrap gap-2 mt-auto">
+              <span class="text-xs font-mono text-indigo-300">Supabase</span>
+              <span class="text-xs font-mono text-indigo-300"
+                >React Native</span
+              >
+              <span class="text-xs font-mono text-indigo-300">LLMs</span>
+            </div>
+          </div>
+
+          <!-- Project 2: Consul -->
+          <div
+            class="group relative bg-slate-900/50 border border-slate-800 hover:border-emerald-500/50 rounded-xl p-6 transition-all hover:bg-slate-900"
+          >
+            <div class="flex justify-between items-start mb-4">
+              <div class="p-3 bg-emerald-500/10 rounded-lg text-emerald-400">
+                <i data-lucide="scale" class="w-6 h-6"></i>
+              </div>
+              <div class="flex gap-3">
+                <a
+                  href="https://www.loom.com/share/3d005f4d38b84727b3d6407a05bc80b9?sid=cb8cef19-c1d7-4994-9087-4d974cb63293"
+                  target="_blank"
+                  class="text-slate-400 hover:text-white transition-colors"
+                  aria-label="Watch Demo"
+                >
+                  <i data-lucide="video" class="w-5 h-5"></i>
+                </a>
+              </div>
+            </div>
+            <h4
+              class="text-xl font-semibold text-white mb-2 group-hover:text-emerald-400 transition-colors"
+            >
+              Consul (YC Finalist)
+            </h4>
+            <p class="text-slate-400 text-sm mb-4 line-clamp-3">
+              GenAI platform for administrative law. Pilot programs with MI, IL,
+              and TX state governments. Interviewed by Garry Tan for YCombinator
+              funding. Leveraged AWS Lambda and DynamoDB for scalable legal
+              analysis.
+            </p>
+            <div class="flex flex-wrap gap-2 mt-auto">
+              <span class="text-xs font-mono text-emerald-300">AWS Lambda</span>
+              <span class="text-xs font-mono text-emerald-300">Cognito</span>
+              <span class="text-xs font-mono text-emerald-300">React</span>
+            </div>
+          </div>
+
+          <!-- Project 3: Piano Vision -->
+          <div
+            class="group relative bg-slate-900/50 border border-slate-800 hover:border-pink-500/50 rounded-xl p-6 transition-all hover:bg-slate-900"
+          >
+            <div class="flex justify-between items-start mb-4">
+              <div class="p-3 bg-pink-500/10 rounded-lg text-pink-400">
+                <i data-lucide="music" class="w-6 h-6"></i>
+              </div>
+              <div class="flex gap-3">
+                <a
+                  href="https://piano-vision-fingering.web.app/"
+                  target="_blank"
+                  class="text-slate-400 hover:text-white transition-colors"
+                >
+                  <i data-lucide="external-link" class="w-5 h-5"></i>
+                </a>
+              </div>
+            </div>
+            <h4
+              class="text-xl font-semibold text-white mb-2 group-hover:text-pink-400 transition-colors"
+            >
+              Piano Vision
+            </h4>
+            <p class="text-slate-400 text-sm mb-4 line-clamp-3">
+              VR Piano learning interface. Deserialized MIDI-adjacent data to
+              dynamically generate music sheets in VR. Built tools for teachers
+              to label fingering and simplify compositions.
+            </p>
+            <div class="flex flex-wrap gap-2 mt-auto">
+              <span class="text-xs font-mono text-pink-300">Firebase</span>
+              <span class="text-xs font-mono text-pink-300">React</span>
+              <span class="text-xs font-mono text-pink-300">Data Viz</span>
+            </div>
+          </div>
+
+          <!-- Project 4: Global Entry Notif -->
+          <div
+            class="group relative bg-slate-900/50 border border-slate-800 hover:border-orange-500/50 rounded-xl p-6 transition-all hover:bg-slate-900"
+          >
+            <div class="flex justify-between items-start mb-4">
+              <div class="p-3 bg-orange-500/10 rounded-lg text-orange-400">
+                <i data-lucide="bell" class="w-6 h-6"></i>
+              </div>
+              <div class="flex gap-3">
+                <a
+                  href="https://globalentrynotif.com/"
+                  target="_blank"
+                  class="text-slate-400 hover:text-white transition-colors"
+                >
+                  <i data-lucide="external-link" class="w-5 h-5"></i>
+                </a>
+              </div>
+            </div>
+            <h4
+              class="text-xl font-semibold text-white mb-2 group-hover:text-orange-400 transition-colors"
+            >
+              Global Entry Notif
+            </h4>
+            <p class="text-slate-400 text-sm mb-4 line-clamp-3">
+              SaaS product helping users find Global Entry interview slots.
+              Integrated with Discord for real-time notifications. Features a
+              headless UI frontend and Stripe integration for payments.
+            </p>
+            <div class="flex flex-wrap gap-2 mt-auto">
+              <span class="text-xs font-mono text-orange-300">Flask</span>
+              <span class="text-xs font-mono text-orange-300">Stripe</span>
+              <span class="text-xs font-mono text-orange-300">Heroku</span>
+            </div>
+          </div>
+
+          <!-- Additional projects simplified -->
+          <div class="md:col-span-2 grid md:grid-cols-3 gap-4 mt-4">
+            <a
+              href="https://github.com/paulnovacovici/Nova"
+              target="_blank"
+              class="block p-4 rounded-lg border border-slate-800 hover:bg-slate-800 transition-all group"
+            >
+              <div class="flex items-center justify-between mb-2">
+                <h5 class="font-medium text-white group-hover:text-sky-400">
+                  Nova (iOS)
+                </h5>
+                <i data-lucide="github" class="w-4 h-4 text-slate-500"></i>
+              </div>
+              <p class="text-xs text-slate-400">
+                Employee tracking & merchandising app built in Swift 5.
+              </p>
+            </a>
+
+            <a
+              href="https://thelyricist.novacovici.dev"
+              target="_blank"
+              class="block p-4 rounded-lg border border-slate-800 hover:bg-slate-800 transition-all group"
+            >
+              <div class="flex items-center justify-between mb-2">
+                <h5 class="font-medium text-white group-hover:text-sky-400">
+                  The Lyricist
+                </h5>
+                <i data-lucide="type" class="w-4 h-4 text-slate-500"></i>
+              </div>
+              <p class="text-xs text-slate-400">
+                Typing practice app using music lyrics and React Hooks.
+              </p>
+            </a>
+
+            <a
+              href="https://github.com/paulnovacovici/Impossible-Game"
+              target="_blank"
+              class="block p-4 rounded-lg border border-slate-800 hover:bg-slate-800 transition-all group"
+            >
+              <div class="flex items-center justify-between mb-2">
+                <h5 class="font-medium text-white group-hover:text-sky-400">
+                  Genetic AI Game
+                </h5>
+                <i data-lucide="cpu" class="w-4 h-4 text-slate-500"></i>
+              </div>
+              <p class="text-xs text-slate-400">
+                Unity/C# game using ML generation to clear obstacles.
+              </p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="py-32 reveal">
+        <div
+          class="bg-gradient-to-br from-slate-900 to-slate-950 rounded-2xl p-8 md:p-16 border border-slate-800 text-center relative overflow-hidden"
+        >
+          <div
+            class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-sky-500 via-indigo-500 to-pink-500"
+          ></div>
+
+          <h2
+            class="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight"
+          >
+            Ready to build something impactful?
+          </h2>
+          <p class="text-slate-400 max-w-xl mx-auto mb-10 text-lg">
+            I'm always open to discussing new opportunities in engineering
+            leadership, AI systems, and product development.
+          </p>
+
+          <div
+            class="flex flex-col sm:flex-row justify-center items-center gap-6"
+          >
+            <a
+              href="mailto:paulnovacovici@gmail.com"
+              class="inline-flex items-center gap-2 px-8 py-4 bg-white text-slate-950 font-semibold rounded-full hover:scale-105 transition-transform duration-200"
+            >
+              <i data-lucide="mail" class="w-5 h-5"></i>
+              paulnovacovici@gmail.com
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-slate-900 bg-slate-950 py-12">
+      <div
+        class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6"
+      >
+        <div class="text-slate-500 text-sm">
+          &copy; 2025 Paul Novacovici. Built with Tailwind.
+        </div>
+        <div class="flex gap-6">
+          <a
+            href="https://github.com/paulnovacovici"
+            target="_blank"
+            class="text-slate-500 hover:text-white transition-colors"
+            ><i data-lucide="github" class="w-5 h-5"></i
+          ></a>
+          <a href="#" class="text-slate-500 hover:text-white transition-colors"
+            ><i data-lucide="linkedin" class="w-5 h-5"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+      // Initialize Icons
+      lucide.createIcons();
+
+      // Reveal Animation Observer
+      const observerOptions = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.1,
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll(".reveal").forEach((el) => {
+        observer.observe(el);
+      });
+
+      // Smooth Scroll behavior override
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            window.scrollTo({
+              top: target.offsetTop - 100, // Offset for sticky header
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
