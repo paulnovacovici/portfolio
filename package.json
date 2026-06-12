@@ -18,6 +18,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "postbuild": "node -e \"require('fs').copyFileSync('build/vibe_coded_index.html','build/index.html')\"",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
