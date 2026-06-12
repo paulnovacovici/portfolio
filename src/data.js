@@ -1,6 +1,6 @@
 const data = {
   name: "Paul Novacovici",
-  jobTitle: "Software Engineer",
+  jobTitle: "Staff Software Engineer",
   websiteName: "novacovici.dev",
   phoneNumber: "847-361-7570",
   email: "paulnovacovici@gmail.com",
@@ -10,8 +10,16 @@ const data = {
     {
       companyName: "Meta",
       icon: "https://cdn-icons-png.flaticon.com/512/6033/6033716.png",
-      yearRange: "2023-present",
-      title: "Senior Enterprise Software Engineer",
+      yearRange: "2026-present",
+      title: "Staff Software Engineer",
+      tech: "TBD",
+      desc: "TBD",
+    },
+    {
+      companyName: "Meta",
+      icon: "https://cdn-icons-png.flaticon.com/512/6033/6033716.png",
+      yearRange: "2023-2026",
+      title: "Senior Software Engineer",
       tech: "Hack, React, Python, SQL, GraphQL, Relay, Flux, Ent Framework, C++, Presto",
       desc: `Owner of a Transactional Accounting system that creates ~300M accounting lines monthly across 100 DB shards. I've also built a rules
       engine that allows business users to own their own bespoke accounting rules dynamically. Was a lead developer in creating
